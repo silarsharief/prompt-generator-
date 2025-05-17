@@ -8,13 +8,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
 from langchain_groq import ChatGroq
+from langchain_openai import ChatOpenAI
 
 llm = ChatGroq(
-        groq_api_key=os.getenv("GROQ_API_KEY"),
-        model_name="meta-llama/llama-4-scout-17b-16e-instruct"
-    )
+    groq_api_key=os.getenv("GROQ_API_KEY"),
+    model_name="meta-llama/llama-4-scout-17b-16e-instruct"
+)
 
 
 def summarize_product_info(product_info: str) -> str:
