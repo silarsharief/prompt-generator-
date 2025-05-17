@@ -452,12 +452,10 @@ from langchain.prompts import (
 )
 from dotenv import load_dotenv
 load_dotenv()
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 
 
 from langchain_groq import ChatGroq
-from langchain_openai import ChatOpenAI
 import re
 
 llm = ChatGroq(
