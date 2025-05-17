@@ -179,12 +179,6 @@ def add_selected_variables():
                 del st.session_state.variables[var['name']]
                 st.session_state.selected_variables.remove(var['name'])
 
-def process_dump_info():
-    if st.session_state.dump_info:
-        st.session_state.process_dump = True
-    else:
-        st.warning("Please enter some information in the dump info section first.")
-
 def main():
     st.title("Script Generator for Real Estate")
     
