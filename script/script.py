@@ -195,7 +195,9 @@ These **ruin the call** and must **never** be used.
 
 Use all the information provided to create the script.  
 Here is the product information: {product_info}  
-Here is the customer information: {{var_name}}  
+Here is the customer information: {var_name}  
+use the variables names in this var_name properly. analyse the variable and use the correct variable names in place of words in examples.
+ex: hi, {{name}}, this is {{agentName}} from {{companyName}} if {{name}},{{agentName}}, and {{companyName}} are the variables used in the script.
 Here is the goals of the call: {goals}  
 Here is the purpose of the call: {purposes}  
 
