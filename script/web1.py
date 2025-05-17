@@ -1,7 +1,7 @@
 import streamlit as st
-from .product_info import summarize_product_info
-from .script import create_script, preference_pitch_script, pitch_only_script, preference_only_script
-from .goals import get_goals
+from script.product_info import summarize_product_info
+from script.script import create_script, preference_pitch_script, pitch_only_script, preference_only_script
+from script.goals import get_goals
 
 def add_variable():
     if st.session_state.new_var_input:
@@ -473,36 +473,18 @@ def main():
     dump_info = st.text_area(
         "Paste or type any information here:", 
         key="dump_info", 
-        height=200,
-        on_change=process_dump_info
+        height=200
     )
     
-    col1, col2 = st.columns([1, 1])
-    with col1:
-        if st.button("Process Dump Info", use_container_width=True):
-            if dump_info:
-                st.session_state.process_dump = True
-            else:
-                st.warning("Please enter some information in the dump info section first.")
-    
-    if st.session_state.get('process_dump', False):
-        if dump_info:
-            # Summarize the dumped info
-            summary = summarize_product_info(dump_info)
-            formatted_info = {'formatted_input': summary}
-            with st.expander("Show/Hide Formatted Info"):
-                st.markdown("**Formatted Product Info:**")
-                st.json(formatted_info)
-        st.session_state.process_dump = False
-
     # Print Script Button
     if st.button("Print Script", use_container_width=True):
-        # Create formatted_info
+        # Always process dump_info here
         if dump_info:
             summary = summarize_product_info(dump_info)
             formatted_info = {'formatted_input': summary}
         else:
             formatted_info = {'formatted_input': ''}
+            summary = ''
         
         # Determine which script type to use
         interested_selected = 'interestedPropertyName' in st.session_state.variables
@@ -559,7 +541,7 @@ NOTE: ABOVE GIVEN EXAMPLES ARE JUST FOR YOUR REFERENCE AND SHOULD NOT BE USED AS
 
 - **Follow the script exactly** – do not miss a single line.
 
-- Replace variables like `"[their word]"` with real-time information collected during the conversation.
+- Replace variables like `[their word]` with real-time information collected during the conversation.
 
 - Understand the script's context and enhance it naturally.
 
