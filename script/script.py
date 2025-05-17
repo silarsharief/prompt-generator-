@@ -462,7 +462,7 @@ import re
 
 llm = ChatGroq(
     groq_api_key=os.getenv("GROQ_API_KEY"),
-    model_name="meta-llama/llama-guard-4-12b"
+    model_name="meta-llama/llama-4-maverick-17b-128e-instruct"
 )
 
 
