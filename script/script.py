@@ -542,9 +542,11 @@ def create_script(product_info: str, var_name: str, goals: str, purposes: str, p
 	Use all the information provided to create the script.  
 	Here is the product information: {product_info}  
 	Here is the customer information: {{var_name}}  
+    above mentioned are the variables used in the script. understand and interpret them properly. and after that use the correct variable names in place of words in examples.
+    ex: hi, {{name}}, this is {{agentName}} from {{companyName}} if {{name}},{{agentName}}, and {{companyName}} are the variables used in the script.
 	Here is the goals of the call: {goals}  
 	Here is the purpose of the call: {purposes}  
-
+	
 	Example script:
 	"""
 
