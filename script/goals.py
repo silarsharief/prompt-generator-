@@ -13,7 +13,7 @@ from langchain_groq import ChatGroq
 
 llm = ChatGroq(
     groq_api_key=os.getenv("GROQ_API_KEY"),
-    model_name="deepseek-r1-distill-llama-70b"
+    model_name="meta-llama/llama-guard-4-12b"
 )
 
 def get_goals(goals: str) -> str:
