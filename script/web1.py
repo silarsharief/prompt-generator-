@@ -1,7 +1,7 @@
 import streamlit as st
-from script.product_info import summarize_product_info
-from script.script import create_script, preference_pitch_script, pitch_only_script, preference_only_script
-from script.goals import get_goals
+from .product_info import summarize_product_info
+from .script import create_script, preference_pitch_script, pitch_only_script, preference_only_script
+from .goals import get_goals
 
 def add_variable():
     if st.session_state.new_var_input:
