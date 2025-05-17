@@ -1,0 +1,25 @@
+Blocks:
+
+Product information from the company
+    - sector    
+    - faq
+    - what they are
+    - what they want from us
+    - data they can provide or usually use to handle their calls before ai
+    - all types of rag from their data pipeline 
+    - what we are handling (inbound)
+    - what we are selling (outbound)
+    - sometimes both
+
+Define Objective
+Goals of AI in the call
+Script
+
+
+
+
+
+
+human in loop bot that helps customer provide us the max amount of data
+takes random data and puts it correctly into our data ingestion pipelines
+s
